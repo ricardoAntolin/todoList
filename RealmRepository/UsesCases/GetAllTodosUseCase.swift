@@ -20,8 +20,14 @@ final class GetAllTodosUseCase: Domain.GetAllTodosUseCase {
     }
     
     func getAllTodos() -> Observable<[TodoListGroupedModel]> {
-        return repository.queryAll().map{todoList in
-            return [TodoListGroupedModel(header: "Tasks", items: todoList)]
+        return repository.queryAll()
+            .map{ todoList in
+                return [
+                    TodoListGroupedModel(
+                        header: "Tasks",
+                        items: todoList.filter { !$0.deleted }
+                    )
+                ]
         }
     }
 }

@@ -19,12 +19,13 @@ class TodoListViewController: UIViewController {
     @IBOutlet weak var addNewTodo: UIBarButtonItem!
     var viewModel: TodoListViewModel!
     var input: TodoListViewModel.Input?
+    private let done = RxBus<TodoModel>()
+    private let trigger = RxBus<GroupTypes>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
         bindViewModel(groupType: GroupTypes.ALL)
-
     }
     
     private func configureTableView() {
@@ -36,17 +37,25 @@ class TodoListViewController: UIViewController {
     private func bindViewModel(groupType: GroupTypes) {
         assert(viewModel != nil)
         
-        input = TodoListViewModel.Input(trigger: Driver.just(groupType),
-                                            createTodoTrigger: addNewTodo.rx.tap.asDriver(),
-                                            selection: tableView.rx.itemSelected.asDriver())
+        input = TodoListViewModel.Input(trigger: trigger.toDriver(),
+                                        createTodoTrigger: addNewTodo.rx.tap.asDriver(),
+                                        selection: tableView.rx.itemSelected.asDriver(),
+                                        done: done.toDriver())
         let output = viewModel.transform(input: input!)
         
         let dataSource = RxTableViewSectionedReloadDataSource<TodoListGroupedModel>()
         
         dataSource.configureCell = { ds, tv, ip, item in
-            let cell = (tv.dequeueReusableCell(withIdentifier: TodoTableViewCell.reuseID) ?? UITableViewCell(style: .default, reuseIdentifier: TodoTableViewCell.reuseID)) as! TodoTableViewCell
+            let cell = (tv.dequeueReusableCell(withIdentifier: TodoTableViewCell.reuseID)
+                ?? UITableViewCell(style: .default, reuseIdentifier: TodoTableViewCell.reuseID)) as! TodoTableViewCell
             cell.doneSwitch.isOn = item.done
             cell.lblTitle.text = item.title
+            cell.doneSwitch.isOn = item.done
+            self.done.send(o: item as TodoModel)
+            cell.doneSwitch.rx.isOn.subscribe { isOn in
+                item.done = isOn.element ?? false
+                self.done.send(o: item as TodoModel)
+            }.addDisposableTo(self.disposeBag)
             return cell
         }
         
@@ -61,14 +70,16 @@ class TodoListViewController: UIViewController {
         
         output.createTodo.drive().addDisposableTo(disposeBag)
         output.selectedTodo.drive().addDisposableTo(disposeBag)
+        
+        trigger.send(o: groupType)
     }
     
     @IBAction func byDateButtonTapped(_ sender: Any) {
-        
+        trigger.send(o: GroupTypes.DATE)
     }
     
     @IBAction func byPriorityButtonTapped(_ sender: Any) {
-    
+        trigger.send(o: GroupTypes.PRIORITY)
     }
     
 }

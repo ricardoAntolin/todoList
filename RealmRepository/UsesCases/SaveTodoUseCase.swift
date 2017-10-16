@@ -18,6 +18,12 @@ final class SaveTodoUseCase: Domain.SaveTodoUseCase {
     }
     
     func saveTodo(todo: TodoModel) -> Observable<Void> {
-        return repository.save(entity: todo)
+        let todoEntity = todo.asRealm()
+        if todoEntity.uid.isEmpty {
+            todoEntity.uid = UUID().uuidString
+            todoEntity.createDate = NSDate()
+        }
+        todoEntity.updateDate = NSDate()
+        return repository.save(entity: todoEntity.asDomain())
     }
 }

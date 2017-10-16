@@ -29,24 +29,34 @@ class DefaultTodoNavigator: TodoListNavigator {
     }
     
     func toCreateTodo(){
-        let navigator = DefaultCreateTodoNavigator(navigationController: navigationController)
-        let viewModel = CreatePostViewModel(createTodoUseCase: services.saveTodoUseCase(),
-                                            navigator: navigator)
-        let vc = storyBoard.instantiateViewController(ofType: CreateTodoViewController.self)
-        vc.viewModel = viewModel
-        let nc = UINavigationController(rootViewController: vc)
-        navigationController.present(nc, animated: true, completion: nil)
+        openTodoDetails(id: nil)
 
     }
     
     func toTodoDetail(_ todo: TodoModel){
-        
+        openTodoDetails(id: todo.uid)
     }
     
     func toTodoList(){
         let vc = storyBoard.instantiateViewController(ofType: TodoListViewController.self)
-        vc.viewModel = TodoListViewModel(getAllTodosUseCase: services.getAllTodosUseCase(),getAllTodosGroupedByDateUseCAse: services.getAllTodosGroupedByDateUseCase(),getAllTodosGroupedByPriorityUseCAse: services.getAllTodosGroupedByPriorityUseCase(),
-                                      navigator: self)
+        vc.viewModel = TodoListViewModel(getAllTodosUseCase: services.getAllTodosUseCase(),
+                                         getAllTodosGroupedByDateUseCAse: services.getAllTodosGroupedByDateUseCase(),
+                                         getAllTodosGroupedByPriorityUseCAse: services.getAllTodosGroupedByPriorityUseCase(),
+                                         saveTodoUseCase: services.saveTodoUseCase(),
+                                         navigator: self)
         navigationController.pushViewController(vc, animated: true)
+    }
+    
+    private func openTodoDetails(id: String?) {
+        let navigator = DefaultCreateTodoNavigator(navigationController: navigationController)
+        let viewModel = CreatePostViewModel(createTodoUseCase: services.saveTodoUseCase(),
+                                            getTodoDetailsUseCase: services.getTodoDetailsFromUUIDUseCase(),
+                                            navigator: navigator)
+        let vc = storyBoard.instantiateViewController(ofType: CreateTodoViewController.self)
+        vc.viewModel = viewModel
+        if (id != nil) { vc.taskUUID = id! }
+        let nc = UINavigationController(rootViewController: vc)
+        navigationController.present(nc, animated: true, completion: nil)
+
     }
 }

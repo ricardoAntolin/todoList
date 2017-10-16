@@ -17,5 +17,7 @@ public protocol UseCaseProvider {
     func getAllTodosGroupedByPriorityUseCase() -> GetAllTodosGroupedByPriorityUseCase
     
     func getAllTodosGroupedByDateUseCase() -> GetAllTodosGroupedByDateUseCase
+    
+    func getTodoDetailsFromUUIDUseCase() -> GetTodoDetailsFromUUIDUseCase
 
 }

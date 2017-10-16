@@ -8,15 +8,15 @@
 
 import Foundation
 
-public struct TodoModel {
-    public let uid: String
-    public let createDate: Date
-    public let updateDate: Date
-    public let title: String
-    public let content: String
-    public let priority: Int
-    public let deleted: Bool
-    public let done: Bool
+public class TodoModel {
+    public var uid: String
+    public var createDate: Date
+    public var updateDate: Date
+    public var title: String
+    public var content: String
+    public var priority: Int
+    public var deleted: Bool
+    public var done: Bool
     
     public init(uid: String,
                 createDate: Date,
@@ -34,6 +34,17 @@ public struct TodoModel {
         self.priority = priority
         self.deleted = deleted
         self.done = done
+    }
+    
+    public init(){
+        self.uid = ""
+        self.createDate = Date()
+        self.updateDate = Date()
+        self.title = ""
+        self.content = ""
+        self.priority = 0
+        self.deleted = false
+        self.done = false
     }
 }
 

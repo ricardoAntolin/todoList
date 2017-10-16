@@ -1,4 +1,4 @@
-platform :ios, '9.0'
+platform :ios, '11.0'
 
 def rx_swift
     pod 'RxSwift', '~> 3.0'

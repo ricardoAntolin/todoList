@@ -24,7 +24,9 @@ final class Application {
         
         let navigationController = UINavigationController()
         
-        let navigator = DefaultTodoNavigator(services: realmUseCaseProvider, navigationController: navigationController, storyBoard: storyboard)
+        let navigator = DefaultTodoNavigator(services: realmUseCaseProvider,
+                                             navigationController: navigationController,
+                                             storyBoard: storyboard)
 
         window.rootViewController = navigationController
        

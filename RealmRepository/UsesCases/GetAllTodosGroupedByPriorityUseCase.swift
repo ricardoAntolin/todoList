@@ -28,9 +28,9 @@ final class GetAllTodosGroupedByPriorityUseCase: Domain.GetAllTodosGroupedByPrio
             
             todoList.forEach{ todo in
                 if(todo.priority == 1){
-                    highList.append(todo)
-                }else if (todo.priority == 2){
                     mediumList.append(todo)
+                }else if (todo.priority == 2){
+                    highList.append(todo)
                 }else {
                     lowList.append(todo)
                 }

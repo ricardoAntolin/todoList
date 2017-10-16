@@ -8,8 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		015B4227D348C1F01332616A /* Pods_DomainTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68D19F6EBFE5518328C190A9 /* Pods_DomainTests.framework */; };
+		090BEE771F93A99300B9402F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 090BEE761F93A99300B9402F /* .gitignore */; };
+		090BEE791F93B8FC00B9402F /* Priority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090BEE781F93B8FC00B9402F /* Priority.swift */; };
+		090BEE7B1F93DC9100B9402F /* GetTodoDetailsFromUUIDUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090BEE7A1F93DC9100B9402F /* GetTodoDetailsFromUUIDUseCase.swift */; };
+		090BEE7D1F93E10C00B9402F /* GetTodoDetailsFromUUIDUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090BEE7C1F93E10C00B9402F /* GetTodoDetailsFromUUIDUseCase.swift */; };
 		09A24FBE1EE2A197003B58B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A24FBD1EE2A197003B58B5 /* AppDelegate.swift */; };
-		09A24FC01EE2A197003B58B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A24FBF1EE2A197003B58B5 /* ViewController.swift */; };
 		09A24FC31EE2A197003B58B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09A24FC11EE2A197003B58B5 /* Main.storyboard */; };
 		09A24FC51EE2A197003B58B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09A24FC41EE2A197003B58B5 /* Assets.xcassets */; };
 		09A24FC81EE2A197003B58B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09A24FC61EE2A197003B58B5 /* LaunchScreen.storyboard */; };
@@ -58,6 +61,7 @@
 		09A250A21EE4000F003B58B5 /* CreateTodoNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A250A11EE4000F003B58B5 /* CreateTodoNavigator.swift */; };
 		09A250A41EE4025C003B58B5 /* CreateTodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A250A31EE4025C003B58B5 /* CreateTodoViewController.swift */; };
 		0ECCBB72BD6FA2FAF5D54C04 /* Pods_RealmRepositoryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B36B40873B0958B1C4A8504 /* Pods_RealmRepositoryTests.framework */; };
+		3021D15A1F9534E1003EC7CB /* RxBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3021D1591F9534E1003EC7CB /* RxBus.swift */; };
 		96E32AD61D93AE5FA55FA54D /* Pods_todoistTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EF16781031B8FB68DA7D591 /* Pods_todoistTests.framework */; };
 		C3552C17C99DFA1EBFF35EDE /* Pods_RealmRepository.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDAD9B1956FC2CD896EE5144 /* Pods_RealmRepository.framework */; };
 		CA6F198AEC1C629E63217546 /* Pods_Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD4E11FEBA75E419D3B40049 /* Pods_Domain.framework */; };
@@ -139,9 +143,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		090BEE761F93A99300B9402F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		090BEE781F93B8FC00B9402F /* Priority.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Priority.swift; sourceTree = "<group>"; };
+		090BEE7A1F93DC9100B9402F /* GetTodoDetailsFromUUIDUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTodoDetailsFromUUIDUseCase.swift; sourceTree = "<group>"; };
+		090BEE7C1F93E10C00B9402F /* GetTodoDetailsFromUUIDUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTodoDetailsFromUUIDUseCase.swift; sourceTree = "<group>"; };
 		09A24FBA1EE2A197003B58B5 /* todoist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = todoist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09A24FBD1EE2A197003B58B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		09A24FBF1EE2A197003B58B5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		09A24FC21EE2A197003B58B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		09A24FC41EE2A197003B58B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09A24FC71EE2A197003B58B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -197,6 +204,7 @@
 		09A250A11EE4000F003B58B5 /* CreateTodoNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTodoNavigator.swift; sourceTree = "<group>"; };
 		09A250A31EE4025C003B58B5 /* CreateTodoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTodoViewController.swift; sourceTree = "<group>"; };
 		2F1497DDACD32CCE9B1B9E81 /* Pods-DomainTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DomainTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DomainTests/Pods-DomainTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3021D1591F9534E1003EC7CB /* RxBus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxBus.swift; sourceTree = "<group>"; };
 		437250D0696A7AA29550C8CB /* Pods-RealmRepository.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmRepository.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RealmRepository/Pods-RealmRepository.debug.xcconfig"; sourceTree = "<group>"; };
 		62947670A425E44718D1E95A /* Pods-RealmRepositoryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmRepositoryTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RealmRepositoryTests/Pods-RealmRepositoryTests.debug.xcconfig"; sourceTree = "<group>"; };
 		630077B5BC604ABA0FF2B575 /* Pods-Domain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Domain.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Domain/Pods-Domain.debug.xcconfig"; sourceTree = "<group>"; };
@@ -282,6 +290,7 @@
 		09A24FB11EE2A197003B58B5 = {
 			isa = PBXGroup;
 			children = (
+				090BEE761F93A99300B9402F /* .gitignore */,
 				09A24FBC1EE2A197003B58B5 /* todoist */,
 				09A24FD11EE2A197003B58B5 /* todoistTests */,
 				09A24FDC1EE2A197003B58B5 /* todoistUITests */,
@@ -317,7 +326,6 @@
 				09A250791EE2B200003B58B5 /* Scenes */,
 				09A250701EE2B1F2003B58B5 /* Utils */,
 				09A24FBD1EE2A197003B58B5 /* AppDelegate.swift */,
-				09A24FBF1EE2A197003B58B5 /* ViewController.swift */,
 				09A24FC11EE2A197003B58B5 /* Main.storyboard */,
 				09A24FC41EE2A197003B58B5 /* Assets.xcassets */,
 				09A24FC61EE2A197003B58B5 /* LaunchScreen.storyboard */,
@@ -408,10 +416,10 @@
 			children = (
 				09A250601EE2AA95003B58B5 /* UseCaseProvider.swift */,
 				09A250621EE2AAAB003B58B5 /* SaveTodoUseCase.swift */,
-				09A2509E1EE37385003B58B5 /* New Group */,
 				09A250641EE2AACD003B58B5 /* GetAllTodosUseCase.swift */,
 				09A2508E1EE314E7003B58B5 /* GetAllTodosGroupedByDateUseCase.swift */,
 				09A250901EE314FB003B58B5 /* GetAllTodosGroupedByPriorityUseCase.swift */,
+				090BEE7A1F93DC9100B9402F /* GetTodoDetailsFromUUIDUseCase.swift */,
 			);
 			path = UsesCases;
 			sourceTree = "<group>";
@@ -459,6 +467,7 @@
 				09A2506A1EE2AB8F003B58B5 /* SaveTodoUseCase.swift */,
 				09A2508A1EE2C950003B58B5 /* GetAllTodosGroupedByDateUseCase.swift */,
 				09A2508C1EE2C95F003B58B5 /* GetAllTodosGroupedByPriorityUseCase.swift */,
+				090BEE7C1F93E10C00B9402F /* GetTodoDetailsFromUUIDUseCase.swift */,
 			);
 			path = UsesCases;
 			sourceTree = "<group>";
@@ -479,6 +488,7 @@
 				09A250721EE2B1F2003B58B5 /* ErrorTracker.swift */,
 				09A250731EE2B1F2003B58B5 /* Observable+Ext.swift */,
 				09A250741EE2B1F2003B58B5 /* Reusable.swift */,
+				3021D1591F9534E1003EC7CB /* RxBus.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -487,8 +497,6 @@
 			isa = PBXGroup;
 			children = (
 				09A250921EE33029003B58B5 /* CreateTodo */,
-				09A250931EE33029003B58B5 /* DetailTodo */,
-				09A250941EE33029003B58B5 /* EditTodo */,
 				09A250951EE33029003B58B5 /* TodoList */,
 			);
 			path = Scenes;
@@ -498,6 +506,7 @@
 			isa = PBXGroup;
 			children = (
 				09A2507B1EE2B205003B58B5 /* ViewModelType.swift */,
+				090BEE781F93B8FC00B9402F /* Priority.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -520,20 +529,6 @@
 			path = CreateTodo;
 			sourceTree = "<group>";
 		};
-		09A250931EE33029003B58B5 /* DetailTodo */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DetailTodo;
-			sourceTree = "<group>";
-		};
-		09A250941EE33029003B58B5 /* EditTodo */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = EditTodo;
-			sourceTree = "<group>";
-		};
 		09A250951EE33029003B58B5 /* TodoList */ = {
 			isa = PBXGroup;
 			children = (
@@ -543,13 +538,6 @@
 				09A2509C1EE33E78003B58B5 /* TodoListViewController.swift */,
 			);
 			path = TodoList;
-			sourceTree = "<group>";
-		};
-		09A2509E1EE37385003B58B5 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "New Group";
 			sourceTree = "<group>";
 		};
 		677371E9248B116B81C3D01A /* Frameworks */ = {
@@ -834,6 +822,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				090BEE771F93A99300B9402F /* .gitignore in Resources */,
 				09A24FC81EE2A197003B58B5 /* LaunchScreen.storyboard in Resources */,
 				09A24FC51EE2A197003B58B5 /* Assets.xcassets in Resources */,
 				09A24FC31EE2A197003B58B5 /* Main.storyboard in Resources */,
@@ -936,13 +925,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Domain-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		3B7786E6F12D342FC7AF2536 /* [CP] Embed Pods Frameworks */ = {
@@ -951,9 +943,24 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-todoist/Pods-todoist-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/QueryKit/QueryKit.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QueryKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -966,9 +973,30 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-RealmRepositoryTests/Pods-RealmRepositoryTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
+				"${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework",
+				"${BUILT_PRODUCTS_DIR}/QueryKit/QueryKit.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxTest.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QueryKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -981,9 +1009,22 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DomainTests/Pods-DomainTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
+				"${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxTest.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -996,13 +1037,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RealmRepositoryTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		86BC97FFCC35F945E04BB1B9 /* [CP] Check Pods Manifest.lock */ = {
@@ -1011,13 +1055,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DomainTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8B8769CCBD301AA6AD300669 /* [CP] Copy Pods Resources */ = {
@@ -1041,9 +1088,18 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-todoistTests/Pods-todoistTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
+				"${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxTest.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1056,13 +1112,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-todoist-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B9B44D5A1ED921C2ADB94188 /* [CP] Copy Pods Resources */ = {
@@ -1101,13 +1160,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-todoistTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DC1C99F54E337BDC93554DEE /* [CP] Check Pods Manifest.lock */ = {
@@ -1116,13 +1178,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RealmRepository-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1137,11 +1202,12 @@
 				09A2507F1EE2B324003B58B5 /* Application.swift in Sources */,
 				09A250A41EE4025C003B58B5 /* CreateTodoViewController.swift in Sources */,
 				09A250781EE2B1F2003B58B5 /* Reusable.swift in Sources */,
-				09A24FC01EE2A197003B58B5 /* ViewController.swift in Sources */,
 				09A250991EE334AD003B58B5 /* TodoListViewModel.swift in Sources */,
 				09A250751EE2B1F2003B58B5 /* ActivityIndicator.swift in Sources */,
 				09A250A21EE4000F003B58B5 /* CreateTodoNavigator.swift in Sources */,
+				090BEE791F93B8FC00B9402F /* Priority.swift in Sources */,
 				09A250A01EE3FF61003B58B5 /* CreateTodoViewModel.swift in Sources */,
+				3021D15A1F9534E1003EC7CB /* RxBus.swift in Sources */,
 				09A24FBE1EE2A197003B58B5 /* AppDelegate.swift in Sources */,
 				09A2509B1EE33D88003B58B5 /* TodoTableViewCell.swift in Sources */,
 				09A250761EE2B1F2003B58B5 /* ErrorTracker.swift in Sources */,
@@ -1176,6 +1242,7 @@
 				09A2506B1EE2AB8F003B58B5 /* SaveTodoUseCase.swift in Sources */,
 				09A2508D1EE2C95F003B58B5 /* GetAllTodosGroupedByPriorityUseCase.swift in Sources */,
 				09A250521EE2A67D003B58B5 /* TodoModel.swift in Sources */,
+				090BEE7D1F93E10C00B9402F /* GetTodoDetailsFromUUIDUseCase.swift in Sources */,
 				09A250691EE2AB70003B58B5 /* GetAllTodosUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1194,6 +1261,7 @@
 			files = (
 				09A2505F1EE2A969003B58B5 /* Repository.swift in Sources */,
 				09A2505D1EE2A8A2003B58B5 /* RealmRepresentable.swift in Sources */,
+				090BEE7B1F93DC9100B9402F /* GetTodoDetailsFromUUIDUseCase.swift in Sources */,
 				09A250911EE314FB003B58B5 /* GetAllTodosGroupedByPriorityUseCase.swift in Sources */,
 				09A250651EE2AACD003B58B5 /* GetAllTodosUseCase.swift in Sources */,
 				09A2505C1EE2A8A2003B58B5 /* DomainConvertibleType.swift in Sources */,
@@ -1383,7 +1451,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = X6WDB9ND2Y;
 				INFOPLIST_FILE = todoist/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rantolin.todoist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1399,7 +1467,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = X6WDB9ND2Y;
 				INFOPLIST_FILE = todoist/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rantolin.todoist;
 				PRODUCT_NAME = "$(TARGET_NAME)";

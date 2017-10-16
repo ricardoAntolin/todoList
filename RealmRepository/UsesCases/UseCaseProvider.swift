@@ -13,28 +13,30 @@ import RealmSwift
 
 public final class UseCaseProvider: Domain.UseCaseProvider {
     private let configuration: Realm.Configuration
+    private let repository:Repository<TodoModel>
     
     public init(configuration: Realm.Configuration = Realm.Configuration()) {
         self.configuration = configuration
+        self.repository = Repository<TodoModel>(configuration: configuration)
     }
     
     public func getAllTodosUseCase() -> Domain.GetAllTodosUseCase {
-        let repository = Repository<TodoModel>(configuration: configuration)
         return GetAllTodosUseCase(repository: repository)
     }
     
     public func saveTodoUseCase() -> Domain.SaveTodoUseCase {
-        let repository = Repository<TodoModel>(configuration: configuration)
         return SaveTodoUseCase(repository: repository)
     }
 
     public func getAllTodosGroupedByDateUseCase() -> Domain.GetAllTodosGroupedByDateUseCase {
-        let repository = Repository<TodoModel>(configuration: configuration)
         return GetAllTodosGroupedByDateUseCase(repository: repository)
     }
     
     public func getAllTodosGroupedByPriorityUseCase() -> Domain.GetAllTodosGroupedByPriorityUseCase {
-        let repository = Repository<TodoModel>(configuration: configuration)
         return GetAllTodosGroupedByPriorityUseCase(repository: repository)
+    }
+    
+    public func getTodoDetailsFromUUIDUseCase() -> Domain.GetTodoDetailsFromUUIDUseCase {
+        return GetTodoDetailsFromUUIDUseCase(repository: repository)
     }
 }

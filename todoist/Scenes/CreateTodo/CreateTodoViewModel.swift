@@ -13,35 +13,47 @@ import Domain
 
 final class CreatePostViewModel: ViewModelType {
     private let createTodoUseCase: SaveTodoUseCase
+    private let getTodoDetailsUseCase: GetTodoDetailsFromUUIDUseCase
     private let navigator: CreateTodoNavigator
+    private var todo:TodoModel? = nil
     
-    init(createTodoUseCase: SaveTodoUseCase, navigator: CreateTodoNavigator) {
+    init(createTodoUseCase: SaveTodoUseCase,  getTodoDetailsUseCase: GetTodoDetailsFromUUIDUseCase,navigator: CreateTodoNavigator) {
         self.createTodoUseCase = createTodoUseCase
+        self.getTodoDetailsUseCase = getTodoDetailsUseCase
         self.navigator = navigator
     }
     
     func transform(input: Input) -> Output {
-        let titleAndDetails = Driver.combineLatest(input.title, input.details) {
-            $0
-        }
         let activityIndicator = ActivityIndicator()
+        let errorTracker = ErrorTracker()
         
-        let canSave = Driver.combineLatest(titleAndDetails, activityIndicator.asDriver()) {
-            return !$0.0.isEmpty && !$0.1.isEmpty && !$1
+        let todo = input.trigger.flatMapLatest { todoUUID -> Driver<TodoModel?> in
+            return self.getTodoDetailsUseCase.findTodoById(id: todoUUID)
+                .do( onNext: { (todo) in self.todo = todo } )
+                .trackActivity(activityIndicator)
+                .trackError(errorTracker)
+                .asDriver(onErrorJustReturn: TodoModel())
+        }
+        
+        let todoModel = Driver.combineLatest(input.title, input.details, input.priority, input.done) { (title, details, priority, done) -> TodoModel in
+            return TodoModel(uid: self.todo?.uid ?? "",
+                      createDate: self.todo?.createDate ?? Date(),
+                      updateDate: self.todo?.updateDate ?? Date(),
+                      title: title,
+                      content: details,
+                      priority: Priority(rawValue: priority)?.hashValue ?? 0,
+                      deleted: self.todo?.deleted ?? false,
+                      done: done)
+        }
+        
+        let canSave = Driver.combineLatest(todoModel, activityIndicator.asDriver()) { (todo, activityIndicator) -> Bool in
+            guard self.todo != nil else { return false }
+            let comp = (todo == self.todo!)
+            return !(comp) && !activityIndicator
         }
         
         
-        let save = input.saveTrigger.withLatestFrom(titleAndDetails)
-            .map { (title, content) in
-                return TodoModel(uid: UUID().uuidString,
-                            createDate: Date(),
-                            updateDate: Date(),
-                            title: title,
-                            content: content,
-                            priority: 1,
-                            deleted: false,
-                            done: false)
-            }
+        let save = input.saveTrigger.withLatestFrom(todoModel)
             .flatMapLatest { [unowned self] in
                 return self.createTodoUseCase.saveTodo(todo: $0)
                     .trackActivity(activityIndicator)
@@ -52,20 +64,24 @@ final class CreatePostViewModel: ViewModelType {
             .merge()
             .do(onNext: navigator.toTodoList )
         
-        return Output(dismiss: dismiss, saveEnabled: canSave)
+        return Output(dismiss: dismiss, saveEnabled: canSave, todo: todo)
     }
 }
 
 extension CreatePostViewModel {
     struct Input {
+        let trigger: Driver<String>
         let cancelTrigger: Driver<Void>
         let saveTrigger: Driver<Void>
         let title: Driver<String>
         let details: Driver<String>
+        let priority: Driver<String>
+        let done: Driver<Bool>
     }
     
     struct Output {
         let dismiss: Driver<Void>
         let saveEnabled: Driver<Bool>
+        let todo: Driver<TodoModel?>
     }
 }

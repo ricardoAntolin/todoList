@@ -1,24 +1,24 @@
 PODS:
-  - Nimble (7.0.0)
+  - Nimble (7.0.2)
   - QueryKit (0.13.0)
-  - Realm (2.8.0):
-    - Realm/Headers (= 2.8.0)
-  - Realm/Headers (2.8.0)
-  - RealmSwift (2.8.0):
-    - Realm (= 2.8.0)
-  - RxBlocking (3.5.0):
-    - RxSwift (~> 3.4)
-  - RxCocoa (3.5.0):
-    - RxSwift (~> 3.4)
-  - RxDataSources (1.0.3):
+  - Realm (2.10.2):
+    - Realm/Headers (= 2.10.2)
+  - Realm/Headers (2.10.2)
+  - RealmSwift (2.10.2):
+    - Realm (= 2.10.2)
+  - RxBlocking (3.6.1):
+    - RxSwift (~> 3.6)
+  - RxCocoa (3.6.1):
+    - RxSwift (~> 3.6)
+  - RxDataSources (1.0.4):
     - RxCocoa (~> 3.0)
     - RxSwift (~> 3.0)
-  - RxRealm (0.6.0):
-    - RealmSwift (~> 2.5)
-    - RxSwift (~> 3.2)
-  - RxSwift (3.5.0)
-  - RxTest (3.5.0):
-    - RxSwift (~> 3.4)
+  - RxRealm (0.7.2):
+    - RealmSwift (~> 2)
+    - RxSwift (~> 3)
+  - RxSwift (3.6.1)
+  - RxTest (3.6.1):
+    - RxSwift (~> 3.6)
 
 DEPENDENCIES:
   - Nimble
@@ -33,17 +33,17 @@ DEPENDENCIES:
   - RxTest (~> 3.0)
 
 SPEC CHECKSUMS:
-  Nimble: 874982b605d4d752fcac6be695d13c502de84b1b
+  Nimble: bfe1f814edabba69ff145cb1283e04ed636a67f2
   QueryKit: 406c42b9b4eb5f8dab380a9e5bd9ef656542d1f4
-  Realm: 929243ad2b618b3232e70658bedc61110e7563f1
-  RealmSwift: 5b7079b891f2833d1849294161ba3e092bbda3f6
-  RxBlocking: 471315e18b87c5ed4b9d0c69a57dfdbca5c01af1
-  RxCocoa: a0a09f45d0e5b48ecb6a4a7b4b4c89c88d3f633f
-  RxDataSources: a021a0e944ba5f7991259829d973afdbfa719c0b
-  RxRealm: 323de579b50b5e0f4a3e087d5925021f976ffaf1
-  RxSwift: 18ee9d78b45edb3b0b7e79916b47a116e6dbc842
-  RxTest: 1763765fd0e2282b0eb44c9050effdd7fe7156d4
+  Realm: 0ef72b837fb67e9f4b098bac771ddd72c7fdbb69
+  RealmSwift: 07a9ae0505091eda6b2ee7c190c3786d6e90a7b0
+  RxBlocking: 4f4bd5732e8b952e54ae8a57739bcfb645de12bc
+  RxCocoa: 84a08739ab186248c7f31ce4ee92d6f8a947d690
+  RxDataSources: b3389acc5fe2eefb8fcd81a2b76a876ad08bc82a
+  RxRealm: 9cf5c15c5312fc770aaa542a360cffec4916e63a
+  RxSwift: f9de85ea20cd2f7716ee5409fc13523dc638e4e4
+  RxTest: 1d00348a7848c91ab5bf5d197d2378aa6b2bb356
 
-PODFILE CHECKSUM: 04ccec8efb58db27c45aa54b999db922daaf1af1
+PODFILE CHECKSUM: c222925c498ac6fe2d3383646664e318bd8fe3f4
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.3.1

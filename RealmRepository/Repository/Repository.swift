@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Foundation
 import Realm
 import RealmSwift
 import RxSwift
@@ -20,6 +19,10 @@ func abstractMethod() -> Never {
 class AbstractRepository<T> {
     
     func queryAll() -> Observable<[T]> {
+        abstractMethod()
+    }
+    
+    func findById(id: String) -> Observable<T?> {
         abstractMethod()
     }
     
@@ -58,6 +61,16 @@ final class Repository<T:RealmRepresentable>: AbstractRepository<T> where T == T
             .subscribeOn(scheduler)
     }
     
+    override func findById(id: String) -> Observable<T?> {
+        return Observable.deferred {
+            let realm = self.realm
+            let object = realm.object(ofType: T.RealmType.self, forPrimaryKey: id)
+            
+            return Observable.just(object?.asDomain())
+            }
+            .subscribeOn(scheduler)
+    }           
+    
     override func save(entity: T) -> Observable<Void> {
         return Observable.deferred {
             let realm = self.realm
@@ -67,6 +80,7 @@ final class Repository<T:RealmRepresentable>: AbstractRepository<T> where T == T
     
     override func delete(entity: T) -> Observable<Void> {
         return Observable.deferred {
+            
             return self.realm.rx.delete(entity: entity)
             }
             .subscribeOn(scheduler)
